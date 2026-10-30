@@ -1,0 +1,11 @@
+{
+  "name": "Study Space — Plataforma de Estudos",
+  "short_name": "Study Space",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }],
+  "background_color": "#f7f7f2",
+  "theme_color": "#f7f7f2",
+  "description": "Organize seus materiais, pratique e acompanhe suas revisões."
+}

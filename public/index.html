@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Study Space — seu espaço para aprender, praticar e revisar.">
+  <link rel="manifest" href="app.webmanifest">
+  <title>Study Space — seu espaço de aprendizagem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard" aria-label="Study Space início"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 8.5c4.2-2 8-1.8 11 1.2v16c-3-3-6.8-3.2-11-1.2v-16Zm22 0c-4.2-2-8-1.8-11 1.2v16c3-3 6.8-3.2 11-1.2v-16Z"/></svg></span><span>study<span class="brand-light">space</span></span></a>
+      <div class="workspace-label">SEU ESPAÇO</div>
+      <nav class="primary-nav" aria-label="Navegação principal">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">◫</span>Visão geral</button>
+        <button class="nav-item" data-view="library"><span class="nav-icon">▤</span>Biblioteca <span class="nav-count" id="material-count">0</span></button>
+        <button class="nav-item" data-view="studio"><span class="nav-icon">✳</span>Estúdio de materiais</button>
+        <button class="nav-item" data-view="study"><span class="nav-icon">◈</span>Estudo ativo</button>
+        <button class="nav-item" data-view="flashcards"><span class="nav-icon">▣</span>Flashcards</button>
+        <button class="nav-item" data-view="planning"><span class="nav-icon">▦</span>Planejamento</button>
+        <button class="nav-item" data-view="reviews"><span class="nav-icon">↻</span>Revisões <span class="nav-dot" id="review-nav-dot"></span></button>
+        <button class="nav-item" data-view="performance"><span class="nav-icon">⌁</span>Meu desempenho</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="week-card"><div class="week-card-top"><span>RITMO DA SEMANA</span><span class="week-icon">↗</span></div><div class="week-progress"><strong id="week-hours">0h 00</strong><span id="week-goal">/ 5h</span></div><div class="progress-track"><span id="week-progress-bar" style="width:0%"></span></div><p id="week-message">Seu progresso semanal aparece aqui.</p></div>
+        <button class="profile-button" data-view="settings"><span class="avatar" id="profile-avatar">?</span><span class="profile-name"><strong id="profile-name">Meu perfil</strong><small>Configurações da conta</small></span><span class="more">···</span></button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar"><button class="mobile-menu" id="menu-toggle" aria-label="Abrir menu">☰</button><div class="breadcrumb"><span>Meu espaço</span><b>/</b><strong id="breadcrumb-current">Visão geral</strong></div><div class="top-actions"><select class="space-select" id="space-select" aria-label="Espaço de estudo"></select><button class="icon-button" aria-label="Revisões próximas" id="notifications">♧<i></i></button><span class="today-label" id="today-label"></span></div></header>
+      <div class="content" id="app-content"></div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="modal" class="modal"><form method="dialog"><button class="modal-close" aria-label="Fechar">×</button></form><div id="modal-content"></div></dialog>
+  <section class="auth-layer" id="auth-layer" hidden></section>
+  <script src="app.js"></script>
+</body>
+</html>
