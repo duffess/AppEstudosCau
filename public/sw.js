@@ -1,4 +1,4 @@
-const CACHE='study-space-v4';
+const CACHE='study-space-v5';
 const ASSETS=['/','/index.html','/styles.css','/app.css','/app.js','/app.webmanifest','/icon.svg'];
 const STATIC=new Set(ASSETS.map(path=>new URL(path,self.location.origin).pathname));
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting())));
